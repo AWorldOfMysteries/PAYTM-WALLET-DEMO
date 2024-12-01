@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // heroku deployment
 const path = require("path");
+__dirname = path.resolve();
 if(process.env.NODE_ENV === "production"){
     app.use(express.static("client/build"));
     app.get("*", (req, res) => {
@@ -24,4 +25,3 @@ app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
 })
 
-// mongodb+srv://aworldofmysteries:J6XjrNZOUsrWq1BV@cluster0.dqbjqlq.mongodb.net/
